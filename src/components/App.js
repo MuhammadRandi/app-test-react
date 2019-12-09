@@ -1,16 +1,27 @@
 import React from "react";
+import Main from "./Main";
 import MenuProps from "./menu";
-import { Container } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+import Project from "./Project";
+import Resume from "./Resume";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">      
-      <MenuProps />
-      <Container textAlign="center">
-          Centered
-      </Container>
+  <Router>
+    <div className="App">     
+     <MenuProps />
+     <Route path="/main" exact component={Main} />
+     <Route path="/project" component={Project} />
+     <Route path="/resume" component={Resume} ></Route>
     </div>
+  </Router>
   );
 }
 

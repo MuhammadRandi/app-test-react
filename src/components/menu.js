@@ -1,5 +1,14 @@
+
 import React, { Component } from "react";
 import { Menu, Image } from "semantic-ui-react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
 
 export default class MenuProps extends Component {
   state = {};
@@ -10,8 +19,9 @@ export default class MenuProps extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu fluid>
+      <Menu fluid stackable>
       <Menu.Item
+          as={Link} to='/main'
           name="Muhammad Randi"
           active={activeItem === "Muhammad Randi"}
           onClick={this.handleItemClick}
@@ -23,11 +33,13 @@ export default class MenuProps extends Component {
           Muhammad Randi
         </Menu.Item>
         <Menu.Item
+          as={Link} to='/project'
           name="Project"
           active={activeItem === "Project"}
           onClick={this.handleItemClick}
         />
         <Menu.Item
+          as={Link} to='/resume'
           name="Resume"
           active={activeItem === "Resume"}
           onClick={this.handleItemClick}
